@@ -23,5 +23,16 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="openjfx-11.0" level="project" />
   </component>
 </module>
