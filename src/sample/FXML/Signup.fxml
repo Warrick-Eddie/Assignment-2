@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@../../../../IntelliJ CODE/src/app/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.signupcontroller">
+<AnchorPane onMouseDragged="#dragged" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@../../../../IntelliJ CODE/src/app/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.signupcontroller">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <effect>
@@ -35,7 +35,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </StackPane.margin>
                <children>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="325.0" prefWidth="450.0" style="-fx-background-color: white;">
+                  <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseDragged="#dragged" prefHeight="325.0" prefWidth="450.0" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -59,17 +59,17 @@
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </TextField>
-                                          <TextField fx:id="tf_username4" promptText="First Name" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_first" promptText="First Name" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </TextField>
-                                          <TextField fx:id="tf_username5" promptText="Last Name" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_last" promptText="Last Name" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </TextField>
-                                          <TextField fx:id="tf_username6" promptText="Role" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_role" promptText="Role" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
@@ -78,22 +78,22 @@
                                     </VBox>
                                     <VBox prefHeight="200.0" prefWidth="100.0">
                                        <children>
-                                          <TextField fx:id="tf_username" promptText="Username" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_user" promptText="Username" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </TextField>
-                                          <PasswordField fx:id="pf_password" promptText="Password" style="-fx-background-color: transparent;">
+                                          <PasswordField fx:id="tf_pass" promptText="Password" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </PasswordField>
-                                          <TextField fx:id="tf_username1" promptText="Secret Question" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_squestion" promptText="Secret Question" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
                                           </TextField>
-                                          <TextField fx:id="tf_username2" promptText="Answer to Secret Question" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_aquestion" promptText="Answer to Secret Question" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
@@ -102,7 +102,7 @@
                                     </VBox>
                                 </items>
                               </SplitPane>
-                              <Button lineSpacing="5.0" mnemonicParsing="false" prefWidth="93.0" style="-fx-background-color: red; -fx-background-radius: 100px; -fx-alignment: center; -fx-text-fill: black;" text="Sign Up">
+                              <Button lineSpacing="5.0" mnemonicParsing="false" onMouseClicked="#signup" prefWidth="93.0" style="-fx-background-color: red; -fx-background-radius: 100px; -fx-alignment: center; -fx-text-fill: black;" text="Sign Up">
                                  <padding>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
@@ -121,7 +121,7 @@
                                     <Bloom threshold="0.79" />
                                  </effect>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red; -fx-font-weight: bold;" text="Login">
+                              <Text onMouseClicked="#login" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red; -fx-font-weight: bold;" text="Login">
                                  <HBox.margin>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                  </HBox.margin>
