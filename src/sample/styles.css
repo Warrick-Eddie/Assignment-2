@@ -1,0 +1,7 @@
+Icon {
+-fx-cursor:hand;
+}
+
+.jfx-text-field {
+-fx-prompt-text-fill: #989898;
+}
