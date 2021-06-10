@@ -40,7 +40,7 @@ public class logincontroller implements Initializable {
                 " = '" + username + "' and password = '" + password + "'");
 
         if (resultSet.next()) {
-            Parent root = FXMLLoader.load(getClass().getResource("/sample/FXML/App.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("FXML/App.fxml"));
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
