@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@../../../../IntelliJ CODE/src/app/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FXML.logincontroller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@../../../../IntelliJ CODE/src/app/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.signupcontroller">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <effect>
@@ -54,7 +54,7 @@
                                 <items>
                                     <VBox prefHeight="200.0" prefWidth="100.0">
                                        <children>
-                                          <TextField fx:id="tf_username3" promptText="ID" style="-fx-background-color: transparent;">
+                                          <TextField fx:id="tf_id" promptText="ID" style="-fx-background-color: transparent;">
                                              <padding>
                                                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                                              </padding>
