@@ -1,1 +1,29 @@
 Select * from HOT WHERE ID = '1'
+
+INSERT INTO HOT (ID, First, Last, Role, User, Pass, SQuestion, AQuestion)
+VALUES ('1', 'Eddie', 'Ngo', 'Combatant', 'user1', '123', 'What is your favourite food?', 'Salmon');
+
+Select ID from HOT WHERE "First" = 'Eddie'
+
+CREATE TABLE HOT (
+ID int NOT NULL PRIMARY KEY,
+First varchar (255),
+Last varchar (255),
+Role varchar (255),
+User varchar (255),
+Pass varchar (255),
+SQuestion varchar (255),
+AQuestion varchar (255)
+);
+
+CREATE TABLE TEST (
+FIRST varchar (255),
+ LAST varchar (255)
+ );
+
+INSERT INTO TEST (FIRST, LAST)
+VALUES ('Jacob', 'McGuire');
+
+select * from HOT WHERE "User" = 'user1' and "Pass" = "123"
+
+
