@@ -129,6 +129,42 @@ public class logincontroller implements Initializable {
         System.out.println("You didn't make it");
     }
 
-    public void login(javafx.scene.input.MouseEvent mouseEvent) {
+    public void login(Event event) throws SQLException {
+        String username, password;
+        username = tf_user.getText();
+        password = tf_pass.getText();
+
+        Connection connection = Database.getInstance().getConnection();
+        Statement statement = connection.createStatement();
+
+        ResultSet resultSet = ((Statement) statement).executeQuery("select * from users where username" +
+                " = '" + username + "' and password = '" + password + "'");
+
+        if (resultSet.next()) {
+            //Parent root = FXMLLoader.load(getClass().getResource("/hd/FXML/App.fxml"));
+            try {
+                //Load new FXML and assign it to scene
+                Parent root = FXMLLoader.load(getClass().getResource("/hd/FXML/App.fxml"));
+                //create empty new stage
+                window = new Stage();
+                //set layout properties
+                Scene scene = new Scene(root);
+                window.setScene(scene);
+                window.setTitle("Hotel System Application");
+                window.show();
+                root.requestFocus();
+                //close login stage
+                ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+            } catch (IOException ex) {
+                System.out.println("Error load homePage FXML !");
+                System.out.println(ex);
+
+            } catch (Exception e) {
+                System.out.println(e);
+                e.printStackTrace();
+            }
+        }
+        //the method above is a test, delete when application is working
+        System.out.println("You didn't make it");
     }
 }

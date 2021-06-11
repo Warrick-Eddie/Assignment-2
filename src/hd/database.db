@@ -1,1 +1,1 @@
-Select * from HOT
+Select * from HOT WHERE ID = '1'
