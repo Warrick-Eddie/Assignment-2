@@ -11,6 +11,11 @@ will allow it to achieve button clicks or minimizing the application.
 2. Initialise the database. 
 3. Run the Main.java file
 
+(1):
+- Download JavaFX-SDK-16 / or any other version
+- Make sure that you configure the library with JavaFX, Configure Program and Module settings to verify that you can run the program. 
+- Apply the VM options so that the system knows how to run the JAVAFX commands. 
+- A link that may help \ is referenced from. > https://www.jetbrains.com/help/idea/javafx.html
 
 
 ##Examples of execution:
