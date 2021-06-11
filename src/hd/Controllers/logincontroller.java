@@ -1,15 +1,17 @@
-package sample.Controllers;
+package hd.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.Connection.Database;
+import hd.Connection.Database;
 
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -22,6 +24,8 @@ import java.util.ResourceBundle;
 
 public class logincontroller implements Initializable {
 
+    public Label helloWorld;
+    //the thing above is a test, delete when application is working
     @FXML
     private TextField tf_user;
     @FXML
@@ -40,14 +44,14 @@ public class logincontroller implements Initializable {
                 " = '" + username + "' and password = '" + password + "'");
 
         if (resultSet.next()) {
-            Parent root = FXMLLoader.load(getClass().getResource("FXML/App.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/hd/FXML/App.fxml"));
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             stage.setScene(new Scene(root));
         }
     }
 
-    double x= 0, y= 0;
+    double x = 0, y = 0;
 
     void pressed(MouseEvent event) {
         x = event.getXOnScreen();
@@ -64,7 +68,7 @@ public class logincontroller implements Initializable {
     }
 
     void signup(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/FXML/Signup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/hd/FXML/Signup.fxml"));
         Node node = (Node) event.getSource();
 
         Stage stage = (Stage) node.getScene().getWindow();
@@ -76,4 +80,9 @@ public class logincontroller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+    public void sayHelloWorld(ActionEvent actionEvent) {
+        helloWorld.setText("YOU FOUND ME");
+    }
+    //the method above is a test, delete when application is working
 }

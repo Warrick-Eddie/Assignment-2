@@ -1,8 +1,8 @@
-package sample.Controllers;
+package hd.Controllers;
 
 import javafx.fxml.Initializable;
-import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
 import java.net.URL;

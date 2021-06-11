@@ -1,4 +1,4 @@
-package sample.Controllers;
+package hd.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.Connection.Database;
+import hd.Connection.Database;
 
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class signupcontroller implements Initializable {
     double x = 0, y = 0;
 
     void login(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("sample/FXML/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample/FXML/Login.fxml"));
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
@@ -62,13 +62,13 @@ public class signupcontroller implements Initializable {
             Statement statement = connection.createStatement();
 
             int status = statement.executeUpdate("insert into users (ID, firstname, lastname, username, password, secret, answer)"
-                    + " values('" + ID + "', '"+ First + "', '" + Last + "', '" + Username + "', '" + Password + "', '" + Secret + "', '" + Answer + "')");
+                    + " values('" + ID + "', '" + First + "', '" + Last + "', '" + Username + "', '" + Password + "', '" + Secret + "', '" + Answer + "')");
 
             if (status > 0) {
                 System.out.println("User has been registered. shamdog");
             }
 
-            } catch (SQLException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
