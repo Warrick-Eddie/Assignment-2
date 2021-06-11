@@ -1,15 +1,15 @@
 package hd.Controllers;
 
+import hd.Connection.Database;
+import hd.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import hd.Connection.Database;
 
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -40,47 +40,6 @@ public class signupcontroller implements Initializable {
 
     double x = 0, y = 0;
 
-    void login(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("sample/FXML/Login.fxml"));
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.setScene(new Scene(root));
-    }
-
-    void signup(MouseEvent event) {
-        Connection connection = Database.getInstance().getConnection();
-
-        try {
-            String ID = tf_id.getId();
-            String First = tf_first.getText();
-            String Last = tf_last.getText();
-            String Username = tf_user.getText();
-            String Password = tf_pass.getText();
-            String Secret = tf_squestion.getText();
-            String Answer = tf_aquestion.getText();
-
-            Statement statement = connection.createStatement();
-
-            int status = statement.executeUpdate("insert into users (ID, firstname, lastname, username, password, secret, answer)"
-                    + " values('" + ID + "', '" + First + "', '" + Last + "', '" + Username + "', '" + Password + "', '" + Secret + "', '" + Answer + "')");
-
-            if (status > 0) {
-                System.out.println("User has been registered. shamdog");
-            }
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-    }
-
-    void dragged(MouseEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-
-        stage.setX(event.getXOnScreen() - x);
-        stage.setY(event.getYOnScreen() - y);
-    }
 
     void pressed(MouseEvent event) {
         x = event.getXOnScreen();
@@ -91,4 +50,54 @@ public class signupcontroller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+    public void signup(javafx.scene.input.MouseEvent event) {
+        Connection connection = Database.getInstance().getConnection();
+
+        try {
+            String ID = tf_id.getId();
+            String First = tf_first.getText();
+            String Last = tf_last.getText();
+            String Role = tf_role.getText();
+            String Username = tf_user.getText();
+            String Password = tf_pass.getText();
+            String Secret = tf_squestion.getText();
+            String Answer = tf_aquestion.getText();
+
+            Statement statement = connection.createStatement();
+
+            int status = statement.executeUpdate("insert into HOT (ID, First, Last, Role, hd.User, Pass, SQuestion, SQuestion)"
+                    + " VALUES(" +
+                    " '" + ID +       "'," +
+                    " '" + First +    "'," +
+                    " '" + Last +     "'," +
+                    " '" + Role +     "'," +
+                    " '" + Username + "'," +
+                    " '" + Password + "'," +
+                    " '" + Secret +   "'," +
+                    " '" + Answer +   "'" +
+                    ")");
+
+            if (status > 0) {
+                System.out.println("hd.User has been registered. shamdog");
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public void login(javafx.scene.input.MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        System.out.println(Main.class.getResource("/hd/FXML/login.fxml"));
+        loader.setLocation(Main.class.getResource("/hd/FXML/login.fxml"));
+        Parent layout = loader.load();
+
+        //Parent root = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
+        Scene scene = new Scene(layout);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

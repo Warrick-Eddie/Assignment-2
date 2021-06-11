@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;"
-            stylesheets="@../../../../IntelliJ CODE/src/app/styles.css" xmlns="http://javafx.com/javafx/16"
+            stylesheets="../styles.css" xmlns="http://javafx.com/javafx/16"
             xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"
@@ -31,7 +31,6 @@
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;"
                               HBox.hgrow="ALWAYS">
                             <children>
-                                <fx:include source="sample.fxml"/>
                                 <VBox alignment="CENTER" prefHeight="343.0" prefWidth="198.0">
                                     <children>
                                         <Text strokeType="OUTSIDE" strokeWidth="0.0"

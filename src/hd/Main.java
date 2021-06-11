@@ -20,11 +20,11 @@ public class Main extends Application {
         //stage.show();
 
         FXMLLoader loader = new FXMLLoader();
-        System.out.println(Main.class.getResource("/hd/FXML/sample2.fxml"));
-        loader.setLocation(Main.class.getResource("/hd/FXML/sample2.fxml"));
+        System.out.println(Main.class.getResource("/hd/FXML/login.fxml"));
+        loader.setLocation(Main.class.getResource("/hd/FXML/login.fxml"));
         Parent layout = loader.load();
 
-        //Parent root = FXMLLoader.load(getClass().getResource("/FXML/sample2.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
         Scene scene = new Scene(layout);
         stage.setScene(scene);
         stage.show();
